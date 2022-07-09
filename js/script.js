@@ -219,12 +219,20 @@ function main(){
     addEventListener("keyup",keyupfunc,false);
     button_left.addEventListener("mousedown",mousedownfunc_left,false);
     button_left.addEventListener("mouseup",mouseupfunc_left,false);
+    button_left.addEventListener("touchstart",mousedownfunc_left,false);
+    button_left.addEventListener("touchdown",mouseupfunc_left,false);
     button_up.addEventListener("mousedown",mousedownfunc_up,false);
     button_up.addEventListener("mouseup",mouseupfunc_up,false);
+    button_up.addEventListener("touchstart",mousedownfunc_up,false);
+    button_up.addEventListener("touchdown",mouseupfunc_up,false);
     button_right.addEventListener("mousedown",mousedownfunc_right,false);
     button_right.addEventListener("mouseup",mouseupfunc_right,false);
+    button_right.addEventListener("touchstart",mousedownfunc_right,false);
+    button_right.addEventListener("touchdown",mouseupfunc_right,false);
     button_down.addEventListener("mousedown",mousedownfunc_down,false);
     button_down.addEventListener("mouseup",mouseupfunc_down,false);
+    button_down.addEventListener("touchstart",mousedownfunc_down,false);
+    button_down.addEventListener("touchdown",mouseupfunc_down,false);
 
     // 方向キーが押されている場合にCASTONを移動させる
     if (caston.move === 0){
@@ -309,17 +317,21 @@ function mousedownfunc_left(){
 }
 function mousedownfunc_up(){
     key.up = true;
+    console.log("up");
 }
 function mousedownfunc_right(){
     key.right = true;
+    console.log("right");
 }
 function mousedownfunc_down(){
     key.down = true;
+    console.log("down");
 }
 
 // ボタンからマウスが離れた時に呼び出される関数
 function mouseupfunc_left(){
     key.left = false;
+    console.log("left");
 }
 function mouseupfunc_up(){
     key.up = false;
