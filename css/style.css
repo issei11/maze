@@ -58,29 +58,41 @@
 }
 
 .top-mark {
-    display: block;
-    font-size: 30px;
+    margin: auto;
+    background-color: blue;
+    width: 34.6px;
+    height: 30px;
+    clip-path: polygon(0 100%, 100% 100%, 50% 0);
 }
 
 .center-mark {
-    display: block;
-    font-size: 30px;
+    margin: auto;
+    background-color: blue;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
 }
 
 .left-mark {
-    display: block;
-    transform: rotate(-90deg);
-    font-size: 30px;
+    margin: auto;
+    background-color: blue;
+    width: 30px;
+    height: 34.6px;
+    clip-path: polygon(100% 0, 100% 100%, 0 50%);
 }
 
 .right-mark {
-    display: block;
-    transform: rotate(90deg);
-    font-size: 30px;
+    margin: auto;
+    background-color: blue;
+    width: 30px;
+    height: 34.6px;
+    clip-path: polygon(0 0, 0 100%, 100% 50%);
 }
 
 .bottom-mark {
-    display: block;
-    transform: rotate(180deg);
-    font-size: 30px;
+    margin: auto;
+    background-color: blue;
+    width: 34.6px;
+    height: 30px;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
