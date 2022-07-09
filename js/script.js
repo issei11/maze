@@ -12,6 +12,10 @@ canvas.height = map_depth*size;
 
 //ボタンを取得
 var button = document.getElementById('button');
+var button_left = document.getElementById('left');
+var button_up = document.getElementById('up');
+var button_right = document.getElementById('right');
+var button_down = document.getElementById('down');
 
 // コンテキストを取得
 var ctx = canvas.getContext('2d');
@@ -213,6 +217,14 @@ function main(){
 
     addEventListener("keydown",keydownfunc,false);
     addEventListener("keyup",keyupfunc,false);
+    button_left.addEventListener("mousedown",mousedownfunc_left,false);
+    button_left.addEventListener("mouseup",mouseupfunc_left,false);
+    button_up.addEventListener("mousedown",mousedownfunc_up,false);
+    button_up.addEventListener("mouseup",mouseupfunc_up,false);
+    button_right.addEventListener("mousedown",mousedownfunc_right,false);
+    button_right.addEventListener("mouseup",mouseupfunc_right,false);
+    button_down.addEventListener("mousedown",mousedownfunc_down,false);
+    button_down.addEventListener("mouseup",mouseupfunc_down,false);
 
     // 方向キーが押されている場合にCASTONを移動させる
     if (caston.move === 0){
@@ -282,12 +294,41 @@ function keydownfunc(event){
     event.preventDefault(); //方向キーでブラウザがスクロールしないようにする
 }
 
+// キーボードが離された時に呼び出される関数
 function keyupfunc(event){
     var key_code = event.keyCode;
     if (key_code === 37) key.left = false;
     if (key_code === 38) key.up = false;
     if (key_code === 39) key.right = false;
     if (key_code === 40) key.down = false;
+}
+
+// ボタンがマウスに押された時に呼び出される関数
+function mousedownfunc_left(){
+    key.left = true;
+}
+function mousedownfunc_up(){
+    key.up = true;
+}
+function mousedownfunc_right(){
+    key.right = true;
+}
+function mousedownfunc_down(){
+    key.down = true;
+}
+
+// ボタンからマウスが離れた時に呼び出される関数
+function mouseupfunc_left(){
+    key.left = false;
+}
+function mouseupfunc_up(){
+    key.up = false;
+}
+function mouseupfunc_right(){
+    key.right = false;
+}
+function mouseupfunc_down(){
+    key.down = false;
 }
 
 //sleep関数

@@ -2,13 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
         <title>迷路</title>
     </head>
     <body>
-        <canvas id="canvas"></canvas>
+        <div class="buttons">
+            <button type="button" onclick="mapGenerate();">マップを生成</button>
+            <button type="button" onclick="mapDisplay_all()">全画面表示</button>
+            <button type="button" onclick="mapDisplay_dark()">暗闇表示</button>
+            <div class="cross-layout">
+                <button class="position-top btn cross-key-btn" id="up"><span class="top-mark">▲</span></button>
+                <button class="position-left btn cross-key-btn" id="left"><span class="left-mark">▲</span></button>
+                <button class="position-center btn cross-key-btn"><span class="center-mark">●</span></button>
+                <button class="position-right btn cross-key-btn" id="right"><span class="right-mark">▲</span></button>
+                <button class="position-bottom btn cross-key-btn" id="down"><span class="bottom-mark">▲</span></button>
+            </div>
+        </div>
+        <div class="canvas">
+            <canvas id="canvas"></canvas>
+        </div>
         <script type="text/javascript" src="js/script.js"></script>
-        <button type="button" onclick="mapGenerate();"/>マップを生成</button>
-        <button type="button" onclick="mapDisplay_all()">全画面表示</button>
-        <button type="button" onclick="mapDisplay_dark()">暗闇表示</button>
     </body>
 </html>
